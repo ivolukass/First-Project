@@ -1,23 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import About from './pages/About';
+import Home from './pages/Home';
+import List from './components/List/SomeList';
+import Error from './pages/Error';
+import SingleCocktail from './pages/SingleCocktail';
+import Tours from './components/Tours/Tours';
+import Menu from './components/Menu/Menu';
+import Accordion from './components/Accordion/Accordion';
+import Review from './components/Review/Review';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route exact path='/about'>
+            <About />
+          </Route>
+          <Route exact path='/list'>
+            <List />
+          </Route>
+          <Route exact path='/tours'>
+            <Tours />
+          </Route>
+          <Route exact path='/menu'>
+            <Menu />
+          </Route>
+          <Route exact path='/accordion'>
+            <Accordion />
+          </Route>
+          <Route exact path='/review'>
+            <Review />
+          </Route>
+          <Route path='/cocktail/:id'>
+            <SingleCocktail />
+          </Route>
+          <Route path='*'>
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
