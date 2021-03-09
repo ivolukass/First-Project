@@ -26,11 +26,16 @@ export const links = [
   },
   {
     id: 6,
+    url: '/users',
+    text: 'users',
+  },
+  {
+    id: 7,
     url: '/about',
     text: 'about',
   },
   {
-    id: 7,
+    id: 8,
     url: '/accordion',
     text: 'accordion',
   },

@@ -10,6 +10,7 @@ import Tours from './components/Tours/Tours';
 import Menu from './components/Menu/Menu';
 import Accordion from './components/Accordion/Accordion';
 import Review from './components/Review/Review';
+import Posts from './components/Posts/Posts';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route exact path='/review'>
             <Review />
+          </Route>
+          <Route exact path='/users'>
+            <Posts />
           </Route>
           <Route path='/cocktail/:id'>
             <SingleCocktail />
